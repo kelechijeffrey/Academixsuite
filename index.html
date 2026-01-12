@@ -272,40 +272,60 @@
     <div class="blob" style="top: 10%; left: -5%;"></div>
     <div class="blob" style="bottom: 10%; right: -5%; background: rgba(244, 63, 94, 0.1);"></div>
 
-    <nav class="glass-nav sticky top-2 md:top-4 flex items-center justify-between px-4 md:px-8 py-3 md:py-4 z-[1000]">
-        <div class="flex items-center space-x-2">
-          <div class="flex items-center">
-  <img
-    src="./img/logo.png"
-    alt="Academixsuite"
-    class="h-16 md:h-20 w-[150px] object-contain"
-  />
-</div>
+ 
+<nav class="glass-nav sticky top-4 z-[1000]">
+  <div class="flex items-center justify-between px-6 py-4">
 
-            
-        </div>
-        
-        <!-- Mobile Menu Button -->
-        <button class="mobile-menu lg:hidden w-10 h-10 flex items-center justify-center text-slate-700">
-            <i class="fas fa-bars text-xl"></i>
+    <!-- Logo -->
+    <img src="./img/logo.png" alt="Academixsuite" class="h-16 w-auto object-contain"/>
+
+    <!-- Desktop Links -->
+    <div class="hidden lg:flex space-x-10 font-semibold text-slate-600 uppercase text-xs tracking-widest">
+      <a href="index.html" class="hover:text-blue-600">Platform</a>
+      <a href="capabilities.html" class="hover:text-blue-600">Capabilities</a>
+      <a href="blog.html" class="text-blue-600 font-bold">Blog</a>
+      <a href="pricingpage.html" class="hover:text-blue-600">Pricing</a>
+    </div>
+
+    <!-- Desktop CTA -->
+    <div class="hidden lg:flex items-center space-x-4">
+      <a href="#" class="text-sm font-bold">Log In</a>
+      <button class="bg-slate-900 text-white px-6 py-2.5 rounded-full font-bold hover:bg-blue-600 transition">
+        Get Demo
+      </button>
+    </div>
+
+    <!-- Hamburger Button -->
+    <button
+      id="menu-btn"
+      class="lg:hidden text-slate-800 text-2xl focus:outline-none"
+      aria-label="Toggle menu"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="hidden lg:hidden px-6 pb-6 pt-2 border-t border-slate-200"
+  >
+    <div class="flex flex-col space-y-5 font-semibold text-slate-700 uppercase text-xs tracking-widest">
+      <a href="index.html" class="hover:text-blue-600">Platform</a>
+      <a href="uses.html" class="hover:text-blue-600">Capabilities</a>
+      <a href="blog.html" class="text-blue-600 font-bold">Blog</a>
+      <a href="pricingpage.html" class="hover:text-blue-600">Pricing</a>
+
+      <div class="pt-4 border-t border-slate-200 flex flex-col space-y-4">
+        <a href="#" class="text-sm font-bold normal-case">Log In</a>
+        <button class="bg-slate-900 text-white py-3 rounded-full font-bold hover:bg-blue-600 transition">
+          Get Demo
         </button>
-        
-        <div class="nav-links lg:flex space-x-4 lg:space-x-10 font-semibold text-slate-600 uppercase text-xs tracking-widest">
-            <a href="index.html" class="hover:text-blue-600 transition py-2">Platform</a>
-            <a href="capabilities" class="hover:text-blue-600 transition py-2">Capabilities</a>
-            <a href="discovery" class="hover:text-blue-600 transition py-2">Discovery</a>
-            <a href="comparison" class="hover:text-blue-600 transition py-2">Comparison</a>
-            <a href="contact.html" class="hover:text-blue-600 transition py-2">Contact us</a>
-            <a href="pricingpage.html" class="hover:text-blue-600 transition py-2">Pricing</a>
-        </div>
+      </div>
+    </div>
+  </div>
+</nav>
 
-        <div class="hidden lg:flex items-center space-x-4">
-            <a href="loginpage.html" class="text-sm font-bold text-slate-700">Log In</a>
-            <button class="bg-slate-900 text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-blue-600 transition shadow-xl">
-                Get Demo
-            </button>
-        </div>
-    </nav>
 
     <header class="hero-mesh relative px-4 md:px-6 pt-12 md:pt-16 pb-20 md:pb-32 overflow-hidden">
         <div class="container mx-auto text-center relative z-10">
@@ -1153,6 +1173,21 @@
 
 });
         });
+
+
+
+
+
     </script>
+
+    
+    <script>
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+</script>
 </body>
 </html>

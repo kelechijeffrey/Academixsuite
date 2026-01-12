@@ -1,15 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pricing | Academixsuite</title>
 
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome (CONNECTED) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
 
   <style>
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
@@ -26,23 +29,51 @@
   </style>
 </head>
 
-<body class="bg-slate-50 text-slate-900">
-<!-- NAVBAR -->
-<nav class="glass-nav sticky top-4 flex items-center justify-between px-6 py-4 z-[1000]">
-  <img src="./img/logo.png" alt="Academixsuite" class="h-16 w-auto object-contain"/>
+ <body class="bg-slate-50 text-slate-900">
 
-  <div class="hidden lg:flex space-x-10 font-semibold text-slate-600 uppercase text-xs tracking-widest">
-    <a href="#index.html" class="hover:text-blue-600">Platform</a>
-    <a href="capabilities" class="hover:text-blue-600">Capabilities</a>
-    <a href="#blog.html" class="text-blue-600 font-bold">Blog</a>
-    <a href="index.html#pricing" class="hover:text-blue-600">Pricing</a>
+<nav class="glass-nav sticky top-4 z-[1000]">
+  <div class="flex items-center justify-between px-6 py-4">
+
+    <!-- Logo -->
+    <img src="./img/logo.png" alt="Academixsuite" class="h-14 w-auto object-contain"/>
+
+    <!-- Desktop Menu -->
+    <div class="hidden lg:flex space-x-10 font-semibold text-slate-600 uppercase text-xs tracking-widest">
+      <a href="index.html" class="hover:text-blue-600">Platform</a>
+      <a href="uses.html" class="hover:text-blue-600">Capabilities</a>
+      <a href="blog.html" class="text-blue-600 font-bold">Blog</a>
+      <a href="pricingpage.html" class="hover:text-blue-600">Pricing</a>
+    </div>
+
+    <!-- Desktop Actions -->
+    <div class="hidden lg:flex items-center space-x-4">
+      <a href="loginpage.html" class="text-sm font-bold">Log In</a>
+      <button class="bg-slate-900 text-white px-6 py-2.5 rounded-full font-bold hover:bg-blue-600 transition">
+        Get Demo
+      </button>
+    </div>
+
+    <!-- Hamburger Button -->
+    <button id="menuBtn" class="lg:hidden text-2xl text-slate-800">
+      <i class="fas fa-bars"></i>
+    </button>
   </div>
 
-  <div class="hidden lg:flex items-center space-x-4">
-    <a href="#" class="text-sm font-bold">Log In</a>
-    <button class="bg-slate-900 text-white px-6 py-2.5 rounded-full font-bold hover:bg-blue-600 transition">
-      Get Demo
-    </button>
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden lg:hidden px-6 pb-6">
+    <div class="flex flex-col space-y-5 font-bold text-slate-700">
+      <a href="index.html" class="hover:text-blue-600">Platform</a>
+      <a href="capabilities.html" class="hover:text-blue-600">Capabilities</a>
+      <a href="blog.html" class="text-blue-600">Blog</a>
+      <a href="pricingpage.html" class="hover:text-blue-600">Pricing</a>
+
+      <hr>
+
+      <a href="loginpage.html" class="text-sm">Log In</a>
+      <button class="bg-slate-900 text-white py-3 rounded-full font-bold hover:bg-blue-600 transition">
+        Get Demo
+      </button>
+    </div>
   </div>
 </nav>
 
@@ -330,6 +361,7 @@
 
   </div>
 </section>
+
 <footer class="bg-white border-t border-slate-100 px-4 md:px-6">
   <div class="container mx-auto pt-12 md:pt-24 pb-10 md:pb-16">
 
@@ -363,8 +395,9 @@
         </h5>
         <ul class="space-y-4 text-slate-500 font-bold text-sm">
           <li><a href="About.html" class="hover:text-blue-600 transition">About Us</a></li>
-          <li><a href="capabilities.html" class="hover:text-blue-600 transition">Events</a></li>
+          <li><a href="capabilities" class="hover:text-blue-600 transition">Events</a></li>
           <li><a href="privacy.html" class="hover:text-blue-600 transition">Privacy Policy</a></li>
+          <li><a href="terms.html" class="hover:text-blue-600 transition">Terms & Conditions</a></li>
           <li><a href="pricingpage.html" class="hover:text-blue-600 transition">Pricing</a></li>
           <li><a href="help.html" class="hover:text-blue-600 transition">Help</a></li>
           <li><a href="contact.html" class="hover:text-blue-600 transition">Contact Us</a></li>
@@ -405,6 +438,19 @@
 
   </div>
 </footer>
+
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const icon = menuBtn.querySelector("i");
+
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+
+    icon.classList.toggle("fa-bars");
+    icon.classList.toggle("fa-times");
+  });
+</script>
 
 
 </body>
